@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1> 새글 쓰기 </h1>
+
+    <form method='post' action=''> 
+    {% comment %} post 방식으로 보내주겠다고 선언 {% endcomment %}
+        {% csrf_token %}
+        {% comment %} 보안을 위해서 장고 기본 보안 수단임! POST방식으로 보낼때 이거 안쓰면 에러남!! {% endcomment %}
+        {{ form.as_p }}
+        <input type='submit' value='등록하기'/>
+    </form>
+</body>
+</html>

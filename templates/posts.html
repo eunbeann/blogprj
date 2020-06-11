@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+
+<body>
+     <button type='button' onclick = 'location.href="{% url "create" %}"'> 새 글 쓰기</button>
+    {% for obj in posts.all%} 
+     {% comment %} post의 모든 객체를 for문으로 돌려서 표시, 모든 객체를 순회하여 내용 표시 {% endcomment %}
+    <h1>제목 : {{ obj.title }}</h1> 
+    {% comment %} obj는 암거나 써도 됨 불러주려고 별명 지은거니까! {% endcomment %}
+    <p> 내용 : {{ obj.body }}</p>
+    <p> {{obj.body}}</p>
+    <p> 올린날짜 : {{ obj.date }}</p>
+    <a href ="{% url 'detail' obj.pk %}"> 자세히 보기 </a>
+    {% endfor %}    
+</body>
+</html>
