@@ -12,7 +12,7 @@ def create(request):
     if request.method=='POST': #POST vs GET 분기
         form=PostForm( request.POST ) #form 변수에 PostForm 할당
         if form.is_valid(): #유효성 검증 통과한다면
-            form.save #저장하고
+            form.save() #저장하고 ()안써서 애먹ㅇ음...
             return redirect('main') #main 페이지로 가기 
     else:
         form=PostForm() # 빈 form 열기'
