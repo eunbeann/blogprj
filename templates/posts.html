@@ -5,25 +5,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link type = "text/css" rel="stylesheet" href="{% static 'css\style.css' %}">
+    <link type = "text/css" rel="stylesheet" href="{% static 'css\style.css' %}?ver=2">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&display=swap" rel="stylesheet">
 </head>
 
 
 <body>
+    <div id = "button">
+        <center><button type="button" class="btn btn-primary btn-lg"  onclick = 'location.href="{% url "create" %}"'> 새 글 쓰기 </button></center>
+        <br><br>
+    </div>
     <div id = "alist">
-        <center> <button type='button' onclick = 'location.href="{% url "create" %}"'>  새 글 쓰기</button>  </center>
-    
         {% for obj in posts.all%} 
         {% comment %} post의 모든 객체를 for문으로 돌려서 표시, 모든 객체를 순회하여 내용 표시 {% endcomment %}
-            <h1> 제목 : {{ obj.title }}</h1> 
+        <div id = "title">
+        <h1>{{ obj.title }}</h1> 
             {% comment %} obj는 암거나 써도 됨 불러주려고 별명 지은거니까! {% endcomment %}
-            <p> 내용 : {{ obj.body }}</p>
-            <p> {{obj.body}}</p>
-            <p> 올린날짜 : {{ obj.date }}</p>
-            <a href ="{% url 'detail' obj.pk %}"> 자세히 보기 </a>
+        </div>
+        <div id = "context">
+            <h3> <내용> <br>{{ obj.body }}</h3>
+        </div>
+        <div id = "date">
+            <h6> 올린날짜 : {{ obj.date }}</h6>
+        </div>
+        <div id = "detail">    
+           <h5> <a href ="{% url 'detail' obj.pk %}"> 자세히 보기 </a></h5>
+        </div>
+        <br> * <br>
             {% endfor %}    
     </div>
-    <br><br><br>
-    <iframe width="853" height="480" src="https://www.youtube.com/embed/PQOJJ037ys8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 </body>
 </html>

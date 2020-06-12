@@ -1,0 +1,28 @@
+
+#alist {
+    background-color: beige;
+    display: flex;
+    height: 60%;
+    width: 80%;
+    flex-direction: column;
+    flex-wrap: wrap;
+    border: 1px black solid;
+    text-align: center;
+    margin: 0 auto;
+    font-family: 'Nanum Gothic', sans-serif;
+}
+
+#title {
+    color: rosybrown;
+}
+
+#context {
+    color: black;
+}
+
+#date {
+    color: gray;
+}
+
+#button {
+}
