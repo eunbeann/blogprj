@@ -1,0 +1,14 @@
+
+#alist {
+    background-color: royalblue;
+    color: rosybrown;
+    display: flex;
+    height: 250px;
+    width: 250px;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+body {
+    padding-left: 15px;
+}
