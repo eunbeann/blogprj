@@ -119,6 +119,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
-STAICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+STAICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static'),
+    ]
 
 # STATIC_ROOT = '/static/' 이건 배포할때 지금은 안씀 위에 거랑 같이 쓰면 오류나!
