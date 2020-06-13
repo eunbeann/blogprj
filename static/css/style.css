@@ -1,3 +1,26 @@
+body {
+    margin-top: 30px;
+}
+
+button{
+    background:rosybrown;
+    color:#fff;
+    border:none;
+    position:relative;
+    height:60px;
+    font-size:2em;
+    padding:0 2em;
+    cursor:pointer;
+    transition:800ms ease all;
+    outline:none;
+    font-family: 'Jua', sans-serif;
+    border-radius: 500px;
+
+  }
+  button:hover{
+    background:#fff;
+    color: rosybrown;
+  }
 
 #alist {
     background-color: beige;
