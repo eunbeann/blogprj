@@ -8,8 +8,8 @@
 <body>
     <h1> {{ post.title }} </h1>
     <p> 게시물 번호 (id): {{ post.pk }}</p>
-    <p> 글쓴이 : {{ post.author }}</p>
-    <p> 등록일 : {{ post.date }}</p>
+    <p> 글쓴이는 {{ post.author }}</p>
+    <p> 등록일은 {{ post.date }}</p>
     <p> {{ post.body }}</p>
     <button type = 'button' onclick='location.href = "{% url "delete" post.pk %}"'> 삭제하기 </button>
 </body>
